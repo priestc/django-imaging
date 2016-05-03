@@ -26,7 +26,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to=IMAGING_SETTINGS['image_dir'])
     imaging_thumbnail = ImageSpecField([
         ResizeToFill(200, 200)],
-        image_field='image',
+        source='image',
         format='JPEG',
         options={'quality':90}
         )
